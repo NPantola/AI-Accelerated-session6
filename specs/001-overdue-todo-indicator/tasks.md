@@ -25,8 +25,8 @@
 
 **Purpose**: Project initialization and verify existing structure
 
-- [ ] T001 Verify project structure and dependencies per implementation plan
-- [ ] T002 Verify CSS custom properties exist: `--color-primary` and `--space-xs` in packages/frontend/src/styles/theme.css
+- [X] T001 Verify project structure and dependencies per implementation plan
+- [X] T002 Verify CSS custom properties exist: `--color-primary` and `--space-xs` in packages/frontend/src/styles/theme.css
 
 ---
 
@@ -36,9 +36,9 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 [P] Create isOverdue utility function in packages/frontend/src/utils/dateUtils.js
-- [ ] T004 [P] Create OverdueIcon component in packages/frontend/src/components/OverdueIcon.js
-- [ ] T005 Add overdue icon styles to packages/frontend/src/styles/theme.css or component CSS
+- [X] T003 [P] Create isOverdue utility function in packages/frontend/src/utils/dateUtils.js
+- [X] T004 [P] Create OverdueIcon component in packages/frontend/src/components/OverdueIcon.js
+- [X] T005 Add overdue icon styles to packages/frontend/src/styles/theme.css or component CSS
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -52,11 +52,11 @@
 
 ### Implementation for User Story 1
 
-- [ ] T006 [US1] Import isOverdue utility function into packages/frontend/src/components/TodoCard.js
-- [ ] T007 [US1] Import OverdueIcon component into packages/frontend/src/components/TodoCard.js
-- [ ] T008 [US1] Add useMemo hook to compute isOverdue status in packages/frontend/src/components/TodoCard.js
-- [ ] T009 [US1] Add conditional rendering of OverdueIcon component in TodoCard layout between checkbox and text in packages/frontend/src/components/TodoCard.js
-- [ ] T010 [US1] Verify overdue icon displays with correct color and position in both light and dark themes
+- [X] T006 [US1] Import isOverdue utility function into packages/frontend/src/components/TodoCard.js
+- [X] T007 [US1] Import OverdueIcon component into packages/frontend/src/components/TodoCard.js
+- [X] T008 [US1] Add useMemo hook to compute isOverdue status in packages/frontend/src/components/TodoCard.js
+- [X] T009 [US1] Add conditional rendering of OverdueIcon component in TodoCard layout between checkbox and text in packages/frontend/src/components/TodoCard.js
+- [X] T010 [US1] Verify overdue icon displays with correct color and position in both light and dark themes
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - overdue incomplete todos display the orange clock icon
 
@@ -70,10 +70,10 @@
 
 ### Implementation for User Story 2
 
-- [ ] T011 [US2] Verify useMemo dependencies include todo.completed in packages/frontend/src/components/TodoCard.js
-- [ ] T012 [US2] Verify isOverdue function returns false when completed is true in packages/frontend/src/utils/dateUtils.js
-- [ ] T013 [US2] Test overdue indicator removal when marking todo complete via onToggle handler
-- [ ] T014 [US2] Test overdue indicator persistence across page refresh/reload
+- [X] T011 [US2] Verify useMemo dependencies include todo.completed in packages/frontend/src/components/TodoCard.js
+- [X] T012 [US2] Verify isOverdue function returns false when completed is true in packages/frontend/src/utils/dateUtils.js
+- [X] T013 [US2] Test overdue indicator removal when marking todo complete via onToggle handler
+- [X] T014 [US2] Test overdue indicator persistence across page refresh/reload
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently - overdue status is correctly tied to completion state
 
@@ -87,12 +87,12 @@
 
 ### Implementation for User Story 3
 
-- [ ] T015 [US3] Verify isOverdue function returns false when dueDate is null/undefined in packages/frontend/src/utils/dateUtils.js
-- [ ] T016 [US3] Verify isOverdue function returns false when dueDate is today in packages/frontend/src/utils/dateUtils.js
-- [ ] T017 [US3] Verify isOverdue function returns false when dueDate is in the future in packages/frontend/src/utils/dateUtils.js
-- [ ] T018 [US3] Test that todos due today do not display overdue indicator
-- [ ] T019 [US3] Test that todos with future due dates do not display overdue indicator
-- [ ] T020 [US3] Test that todos with no due date do not display overdue indicator
+- [X] T015 [US3] Verify isOverdue function returns false when dueDate is null/undefined in packages/frontend/src/utils/dateUtils.js
+- [X] T016 [US3] Verify isOverdue function returns false when dueDate is today in packages/frontend/src/utils/dateUtils.js
+- [X] T017 [US3] Verify isOverdue function returns false when dueDate is in the future in packages/frontend/src/utils/dateUtils.js
+- [X] T018 [US3] Test that todos due today do not display overdue indicator
+- [X] T019 [US3] Test that todos with future due dates do not display overdue indicator
+- [X] T020 [US3] Test that todos with no due date do not display overdue indicator
 
 **Checkpoint**: All user stories should now be independently functional - overdue logic handles all edge cases correctly
 
@@ -102,14 +102,14 @@
 
 **Purpose**: Improvements that affect multiple user stories and final validation
 
-- [ ] T021 [P] Verify accessibility: OverdueIcon has aria-label="Overdue" and role="img" in packages/frontend/src/components/OverdueIcon.js
-- [ ] T022 [P] Verify date normalization uses setHours(0,0,0,0) for day-level comparison in packages/frontend/src/utils/dateUtils.js
-- [ ] T023 [P] Add JSDoc comments to isOverdue function in packages/frontend/src/utils/dateUtils.js
-- [ ] T024 Test editing todo due date from past to future removes overdue indicator
-- [ ] T025 Test editing todo due date from future to past adds overdue indicator (if incomplete)
-- [ ] T026 Run quickstart.md validation scenarios for all user stories
-- [ ] T027 [P] Verify ESLint passes with no errors or warnings
-- [ ] T028 [P] Verify code follows constitution principles (DRY, KISS, Single Responsibility)
+- [X] T021 [P] Verify accessibility: OverdueIcon has aria-label="Overdue" and role="img" in packages/frontend/src/components/OverdueIcon.js
+- [X] T022 [P] Verify date normalization uses setHours(0,0,0,0) for day-level comparison in packages/frontend/src/utils/dateUtils.js
+- [X] T023 [P] Add JSDoc comments to isOverdue function in packages/frontend/src/utils/dateUtils.js
+- [X] T024 Test editing todo due date from past to future removes overdue indicator
+- [X] T025 Test editing todo due date from future to past adds overdue indicator (if incomplete)
+- [X] T026 Run quickstart.md validation scenarios for all user stories
+- [X] T027 [P] Verify ESLint passes with no errors or warnings
+- [X] T028 [P] Verify code follows constitution principles (DRY, KISS, Single Responsibility)
 
 ---
 

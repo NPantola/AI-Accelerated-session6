@@ -1,0 +1,14 @@
+/**
+ * OverdueIcon Component Styles
+ * 
+ * Orange clock icon styling using theme color tokens
+ */
+
+.overdue-icon {
+  color: var(--color-primary);
+  margin-right: var(--space-xs);
+  font-size: 1em;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}

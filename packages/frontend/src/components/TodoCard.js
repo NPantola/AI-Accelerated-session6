@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import { isOverdue } from '../utils/dateUtils';
+import OverdueIcon from './OverdueIcon';
 
 function TodoCard({ todo, onToggle, onEdit, onDelete, isLoading }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(todo.title);
   const [editDueDate, setEditDueDate] = useState(todo.dueDate || '');
   const [editError, setEditError] = useState(null);
+
+  // Compute overdue status - memoized to avoid unnecessary recalculations
+  const todoIsOverdue = useMemo(() => {
+    return isOverdue(todo.dueDate, todo.completed === 1);
+  }, [todo.dueDate, todo.completed]);
 
   const handleToggle = async () => {
     try {
@@ -116,6 +123,8 @@ function TodoCard({ todo, onToggle, onEdit, onDelete, isLoading }) {
         className="todo-checkbox"
         aria-label={`Mark "${todo.title}" as ${todo.completed ? 'incomplete' : 'complete'}`}
       />
+
+      {todoIsOverdue && <OverdueIcon />}
 
       <div className="todo-content">
         <h3 className="todo-title">{todo.title}</h3>
