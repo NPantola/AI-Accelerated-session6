@@ -17,5 +17,5 @@ The project documentation will be built during the bootcamp sessions.
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read the current plan:
-[Implementation Plan](../specs/001-overdue-todo-indicator/plan.md)
+[Implementation Plan](../specs/002-todo-priority/plan.md)
 <!-- SPECKIT END -->
