@@ -8,6 +8,16 @@
 
 **Input**: User description: "Users need a clear, visual way to identify which todos have not been completed by their due date. This helps users quickly spot overdue items without having to manually check dates against today's date."
 
+## Clarifications
+
+### Session 2026-06-04
+
+- Q: Given the project's Halloween theme (orange/purple palette) and UI consistency requirements, which visual treatment should be used for overdue todos: color change only, icon + color combination, border/outline styling, or background + text styling? → A: Icon + color combination - Add a warning/alert icon alongside color treatment (for accessibility and clear semantic meaning)
+- Q: Which specific icon type should be used for the overdue indicator: clock/timer icon, exclamation mark in circle, warning triangle, or bell/notification icon? → A: Clock/timer icon - Directly represents time/deadline concept
+- Q: Which color from the Halloween theme palette (orange/purple) should be used for overdue todos, or should a different color be used? → A: Orange - Signals urgency and time-sensitivity
+- Q: Where should the overdue icon be positioned on the todo item: before checkbox, after checkbox before text, after todo text, or overlay on checkbox? → A: After checkbox, before text - Between interaction and content
+- Q: Should only the icon be orange, or should the color extend to other elements (icon + text, icon + border, icon + background tint)? → A: Icon only - Clock icon is orange, text remains default
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Visual Identification of Overdue Items (Priority: P1)
@@ -20,8 +30,8 @@ Users can immediately see which incomplete todos are past their due date through
 
 **Acceptance Scenarios**:
 
-1. **Given** a todo item with a due date in the past and status "incomplete", **When** the user views the todo list, **Then** the overdue todo displays with a distinctive visual indicator (color, icon, or styling)
-2. **Given** multiple todos with various due dates (past, today, future), **When** the user scans the todo list, **Then** all overdue items are immediately distinguishable from non-overdue items
+1. **Given** a todo item with a due date in the past and status "incomplete", **When** the user views the todo list, **Then** the overdue todo displays with an orange clock/timer icon positioned after the checkbox and before the todo text
+2. **Given** multiple todos with various due dates (past, today, future), **When** the user scans the todo list, **Then** all overdue items are immediately distinguishable from non-overdue items through their orange clock icon positioned between the checkbox and text
 3. **Given** a todo item with a due date of today, **When** the user views the todo list, **Then** the todo does NOT display as overdue (only past dates are overdue)
 
 ---
@@ -70,7 +80,7 @@ Todos with due dates of today or in the future are never incorrectly marked as o
 
 ### Functional Requirements
 
-- **FR-001**: System MUST visually distinguish incomplete todos with due dates in the past from other todos
+- **FR-001**: System MUST visually distinguish incomplete todos with due dates in the past from other todos using an orange clock/timer icon positioned after the checkbox and before the todo text
 - **FR-002**: System MUST compare the todo's due date against the current date to determine overdue status
 - **FR-003**: System MUST consider a todo overdue only if its due date is before today AND its status is incomplete
 - **FR-004**: System MUST NOT mark todos as overdue if they have no due date set
@@ -84,7 +94,7 @@ Todos with due dates of today or in the future are never incorrectly marked as o
 ### Key Entities *(include if feature involves data)*
 
 - **Todo Item**: Each todo has a due date (optional), completion status (complete/incomplete), and visual display properties. Overdue status is derived from comparing the due date to the current date and checking completion status.
-- **Overdue Indicator**: A visual element or styling applied to todo items. This is a derived display property, not a stored attribute. It is calculated based on the todo's due date and completion status.
+- **Overdue Indicator**: An orange clock/timer icon positioned after the checkbox and before the todo text. Only the icon is styled orange; the todo text remains in default colors to maintain readability. This is a derived display property, not a stored attribute. It is calculated based on the todo's due date and completion status. The clock icon provides temporal semantic meaning and accessibility, while the orange color signals urgency and time-sensitivity. The placement between checkbox and text ensures immediate visibility when scanning the list.
 
 ## Success Criteria *(mandatory)*
 
